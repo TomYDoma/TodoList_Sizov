@@ -79,13 +79,14 @@ body{
     background-position: center; 
 }
 
-.btn_delete:hover, .btn_complete:hover {
+.btn_delete:hover{
     background-color:#f78ca0;
     transition: 0.7s;
 }
 
-.btn_delete:active, .btn_complete:active {
+.btn_delete:active{
     background-color: #ffbf00;
+    transition: 0.7s;
 }
 
 .content_task{
