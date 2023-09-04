@@ -1,0 +1,89 @@
+body{ 
+    background: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+}
+
+.main_field_right{
+    background-color: rgb(255, 255, 255);
+    width:50%;
+    min-height: 600px;
+    margin: 4% 5%;
+    border-radius: 10px; 
+    float: right ;
+}
+.main_field_left{
+    background-color: rgb(255, 255, 255);
+    width:30%;
+    min-height: 600px;
+    border-radius: 10px; 
+    margin: 4%;
+    float: left;
+}
+
+.task{
+    background-color: rgb(255, 255, 255);
+    margin:20px auto;
+    min-height: 60px;
+    max-width: 80%;
+}
+
+.left_task{
+    float: left;
+    width: 70%;
+    height: 60px;
+    border-radius: 10px; 
+    border: 1px solid;
+}
+
+.center_task{
+    float:right;  
+    width: 15%;
+    height: 60px;
+}
+
+.right_task{
+    float: right;  
+    width: 15%;
+    height: 60px;
+}
+
+.btn_delete, .btn_complete{
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px; 
+    border: 1px solid;
+}
+
+.btn_delete:hover, .btn_complete:hover {
+    background-color:#f78ca0;
+    transition: 0.7s;
+}
+
+.btn_delete:active, .btn_complete:active {
+    background-color: #ffbf00;
+}
+
+.content_task{
+  margin-left: 5%;  
+}
+
+.block_form{
+    background: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+    margin:20px auto;
+    height: 80%;
+    width: 80%;
+    border-radius: 10px; 
+    padding: 1%;
+}
+
+.btn-light{
+    width: 70%;
+    margin: 1% 15%;
+    display: block;
+}
+
+.contentTodo{
+    font-size: 60%;    
+}
+
+
