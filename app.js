@@ -1,16 +1,15 @@
 let nameTodo = document.querySelector('.name'),
     contentTodo = document.querySelector('.content'),
-    addButton = document.querySelector('.message');
+    addButton = document.querySelector('.push_task');
     todo = document.querySelector('.tasks');
-    delButton = document.querySelector('.btn_delete');
+    clearButton = document.querySelector('.btn_clear');
     
 let todoList = []; 
 
-if(localStorage.getItem('todo')){
-    todoList = JSON.parse(localStorage.getItem('todo'));
+if(localStorage.getItem('todoList')){
+    todoList = JSON.parse(localStorage.getItem('todoList'));
     displayMessages();
 }
-    
 
 addButton.addEventListener('click', function(){
     let newTodo = {
@@ -20,8 +19,9 @@ addButton.addEventListener('click', function(){
     };
 
     todoList.push(newTodo);
+    updateTasks();
     displayMessages();
-    localStorage.setItem('todo', JSON.stringify(todoList));
+    localStorage.setItem('todoList', JSON.stringify(todoList));
     nameTodo.value = '';
     contentTodo.value = '';
  });
@@ -49,39 +49,44 @@ addButton.addEventListener('click', function(){
     </div>
     `;
     todo.innerHTML = displayMessage;
-
     })
-
 }
 
-todo.addEventListener('change', function(event){
-    console.log(event.target);
+clearButton.addEventListener('click', function(){
+    nameTodo.value = '';
+    contentTodo.value = '';
 });
 
+function updateTasks(){
+    todoList.sort((x, y) =>  x.completed - y.completed);
+    console.log(todoList);
+    localStorage.setItem('todoList', JSON.stringify(todoList));
+    displayMessages(); 
+}
 
 function deleteTodo(id){
     todoList.splice(id, 1);
     displayMessages();  
-    localStorage.setItem('todo', JSON.stringify(todoList));
-
+    updateTasks();
+    localStorage.setItem('todoList', JSON.stringify(todoList));
 };
-
 
 function completeTodo(i){
-    console.log(i);
     todoList.forEach(function(item){
-        console.log(item.nameTask);
         if (item.nameTask === i){
             item.completed = !item.completed;
-            console.log("Сука");
-            localStorage.setItem('todo', JSON.stringify(todoList));
-            displayMessages(); 
-
-        }
-        
-    })
-    
+            localStorage.setItem('todoList', JSON.stringify(todoList));
+            displayMessages();    
+        }   
+    }) 
+    updateTasks()
 };
+
+
+
+
+
+
 
 
 
