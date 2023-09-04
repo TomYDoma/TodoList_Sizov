@@ -2,7 +2,7 @@ let nameTodo = document.querySelector('.name'),
     contentTodo = document.querySelector('.content'),
     addButton = document.querySelector('.message');
     todo = document.querySelector('.tasks');
-    del = document.querySelector('.btn_delete');
+    delButton = document.querySelector('.btn_delete');
     
 let todoList = []; 
 
@@ -16,8 +16,8 @@ addButton.addEventListener('click', function(){
     let newTodo = {
         nameTask: nameTodo.value,
         contentTask: contentTodo.value, 
+        completed: false
     };
-
 
     todoList.push(newTodo);
     displayMessages();
@@ -25,9 +25,6 @@ addButton.addEventListener('click', function(){
     nameTodo.value = '';
     contentTodo.value = '';
  });
-
-
-
 
  function displayMessages(){
     let displayMessage = '';
@@ -47,7 +44,7 @@ addButton.addEventListener('click', function(){
             <button type="button" class="btn_delete" id='${i}' onclick="deleteTodo(${i})">Удолить</button>
         </div>
         <div class="right_task">
-            <button type="button" class="btn_complete" id='${i}'>Выполнить</button>
+            <button type="button" class="btn_complete_${item.completed ? 'checked' : ''}" id='${i}' onclick="completeTodo('${item.nameTask}')"></button>
         </div>
     </div>
     `;
@@ -66,7 +63,24 @@ function deleteTodo(id){
     todoList.splice(id, 1);
     displayMessages();  
     localStorage.setItem('todo', JSON.stringify(todoList));
-    console.log(document.querySelector('.btn_delete').id);
+
+};
+
+
+function completeTodo(i){
+    console.log(i);
+    todoList.forEach(function(item){
+        console.log(item.nameTask);
+        if (item.nameTask === i){
+            item.completed = !item.completed;
+            console.log("Сука");
+            localStorage.setItem('todo', JSON.stringify(todoList));
+            displayMessages(); 
+
+        }
+        
+    })
+    
 };
 
 

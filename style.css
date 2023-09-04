@@ -46,12 +46,37 @@ body{
     height: 60px;
 }
 
-.btn_delete, .btn_complete{
+.btn_delete{
     background-color: white;
     height: 100%;
     width: 100%;
     border-radius: 10px; 
     border: 1px solid;
+   
+}
+
+
+.btn_complete_{
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px; 
+    border: 1px solid;
+    background-image: url(image/checkmark_gray.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+.btn_complete_checked{
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px; 
+    border: 1px solid;
+    background-image: url(image/checkmark_black.png);
+    background-repeat: no-repeat;
+    background-position: center; 
 }
 
 .btn_delete:hover, .btn_complete:hover {
@@ -85,5 +110,6 @@ body{
 .contentTodo{
     font-size: 60%;    
 }
+
 
 
