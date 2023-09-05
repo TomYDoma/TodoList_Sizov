@@ -121,8 +121,11 @@ function deleteTodo(id){
 
 function completeTodo(i){
     todoList.forEach(function(item){
+        item.highlighted_one = false;
+        item.highlighted_two = false;
         if (item.nameTask === i){
             item.completed = !item.completed;
+            
             localStorage.setItem('todoList', JSON.stringify(todoList));
             displayMessages();    
         }   
