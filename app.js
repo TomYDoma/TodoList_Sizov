@@ -5,6 +5,8 @@ let nameTodo = document.querySelector('.name'),
     clearButton = document.querySelector('.btn_clear');
     deleteFirstButton = document.querySelector('.btn_delete_first');
     deleteLastButton = document.querySelector('.btn_delete_last');
+    highlightingButton_one = document.querySelector('.btn_highlighting_one');
+    highlightingButton_two = document.querySelector('.btn_highlighting_two');
     
 let todoList = []; 
 
@@ -17,7 +19,9 @@ addButton.addEventListener('click', function(){
     let newTodo = {
         nameTask: nameTodo.value,
         contentTask: contentTodo.value, 
-        completed: false
+        completed: false,
+        highlighted_one: false,
+        highlighted_two: false,
     };
 
     todoList.push(newTodo);
@@ -36,7 +40,7 @@ addButton.addEventListener('click', function(){
     todoList.forEach(function(item, i){
     displayMessage += `
     <div class="task" id='${i}'>
-        <div class="left_task">
+        <div class="left_task${item.highlighted_one ? 'highlighted_task_one' : ''}${item.highlighted_two ? 'highlighted_task_two' : ''}">
             <div class="content_task">
                 <h4 id='${i}'>${item.nameTask}</h4>
                 <p class="contentTodo">${item.contentTask}</p>
@@ -76,9 +80,34 @@ deleteLastButton.addEventListener('click', function(){
     
 });
 
+highlightingButton_one.addEventListener('click', function(){
+    let i = 0;
+    todoList.forEach(function(item){
+        if (i % 2 === 0){
+            item.highlighted_one = ! item.highlighted_one;
+            localStorage.setItem('todoList', JSON.stringify(todoList));
+            displayMessages();
+        }
+        i ++;
+        updateTasks();
+    }) 
+});
+
+highlightingButton_two.addEventListener('click', function(){
+    let i = 0;
+    todoList.forEach(function(item){
+        if (i % 2 !== 0){
+            item.highlighted_two = ! item.highlighted_two;
+            localStorage.setItem('todoList', JSON.stringify(todoList));
+            displayMessages();
+        }
+        i ++;
+        updateTasks();
+    })  
+});
+
 function updateTasks(){
     todoList.sort((x, y) =>  x.completed - y.completed);
-    console.log(todoList);
     localStorage.setItem('todoList', JSON.stringify(todoList));
     displayMessages(); 
 }
@@ -98,14 +127,5 @@ function completeTodo(i){
             displayMessages();    
         }   
     }) 
-    updateTasks()
+    updateTasks();
 };
-
-
-
-
-
-
-
-
-

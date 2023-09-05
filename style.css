@@ -52,6 +52,7 @@ body{
     width: 100%;
     border-radius: 10px; 
     border: 1px solid;
+    font-size: 100%;
    
 }
 
@@ -116,7 +117,31 @@ body{
     text-decoration:none;
     color: black;
     font-family: fantasy;
+}
 
+
+.left_taskhighlighted_task_one{
+    float: left;
+    width: 70%;
+    height: 60px;
+    border-radius: 10px; 
+    border: 1px solid;
+    background-color: red;
+}
+
+
+.left_taskhighlighted_task_two{
+    float: left;
+    width: 70%;
+    height: 60px;
+    border-radius: 10px; 
+    border: 1px solid;
+    background-color: green;
+}
+
+.name, .content{
+    width: 100%;
+   
 }
 
 

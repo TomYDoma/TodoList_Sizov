@@ -10,70 +10,54 @@
     <title>ТуДу лист</title>
 </head>
 <body>
-   
-      <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
-         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Непосредственно ТуДу лист</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDark" aria-controls="navbarDark" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+   <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+      <div class="container-fluid">
+         <a class="navbar-brand" href="#">Непосредственно ТуДу лист</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDark" aria-controls="navbarDark" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+      </div>
+   </nav>
+
+   <div id="container">
+      <div class="main_field_left">
+         <h1 style="text-align: center">Добавление задачи</h1>
+         <div class="block_form">
+            <div class="block_form" style="text-align:center;">
+               <p><b>Название задачи:</b><br>
+                  <input type="text" class="name">
+               </p>
+               <p>
+                  <b>Описание задачи:</b>
+                  <br>
+                  <input type="text" class="content">
+               </p>
+            </div>
+            <div class="block_form">
+               <button class="btn btn-light push_task" >Отправить</button>
+               <button class="btn btn-light btn_clear" >Очистить</button>
+            </div>
          </div>
-      </nav>
-
-      <div id="container">
-
-         <div class="main_field_left">
-           
-            <h1 style="text-align: center">Добавление задачи</h1>
-            <div class="block_form">
-               <div class="block_form" style="text-align:center;">
-                  <p><b>Название задачи:</b><br>
-                     <input type="text" class="name">
-                  </p>
-   
-                  <p><b>Описание задачи:</b><br>
-                     <input type="text" class="content">
-                  </p>
-               </div>
-              
-                  
-                  
-                  <div class="block_form">
-                     <button class="btn btn-light push_task" >Отправить</button>
-                     <button class="btn btn-light btn_clear" >Очистить</button>
-                  </div>
-    
-            </div>
-
-            <div class="block_form">
-               <button type="button" class="btn btn-light ">Выделение четных элементов</button>
-               <button type="button" class="btn btn-light">Выделение нечетных элементов</button>
-               <button type="button" class="btn btn-light btn_delete_first">Удаление первого элемента</button>
-               <button type="button" class="btn btn-light btn_delete_last">Удаление последнего элемента</button> 
-            </div>
-
-
-            <div class="block_form">
-               <img src="image/checkmark_gray.png" alt="">
-               <a class="text_explanation"> - Задача создана</a>
-               <img src="image/checkmark_black.png" alt=""> 
-               <a class="text_explanation"> - Задача выполнена</a> 
-            </div>
+         <div class="block_form">
+            <button type="button" class="btn btn-light btn_highlighting_two">Выделение четных элементов</button>
+            <button type="button" class="btn btn-light btn_highlighting_one">Выделение нечетных элементов</button>
+            <button type="button" class="btn btn-light btn_delete_first">Удаление первого элемента</button>
+            <button type="button" class="btn btn-light btn_delete_last">Удаление последнего элемента</button> 
+         </div>
+         <div class="block_form">
+            <img src="image/checkmark_gray.png" alt="">
+            <a class="text_explanation">-Создана</a>
+            <img src="image/checkmark_black.png" alt=""> 
+            <a class="text_explanation">-Выполнена</a> 
+         </div>  
+      </div>
+      <div class="main_field_right">
+         <h1 style="text-align: center">Непосредственно сами задачи</h1>
+         <div class="tasks">
             
          </div>
-
-         <div class="main_field_right">
-            <h1 style="text-align: center">Непосредственно сами задачи</h1>
-
-            <div class="tasks">
-               
-            </div>
-
-
-         </div>
-
       </div>
-      
-      <script src="app.js"></script>                  
+   </div>
+   <script src="app.js"></script>                  
 </body>
 </html>
