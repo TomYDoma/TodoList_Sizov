@@ -3,6 +3,8 @@ let nameTodo = document.querySelector('.name'),
     addButton = document.querySelector('.push_task');
     todo = document.querySelector('.tasks');
     clearButton = document.querySelector('.btn_clear');
+    deleteFirstButton = document.querySelector('.btn_delete_first');
+    deleteLastButton = document.querySelector('.btn_delete_last');
     
 let todoList = []; 
 
@@ -55,6 +57,23 @@ addButton.addEventListener('click', function(){
 clearButton.addEventListener('click', function(){
     nameTodo.value = '';
     contentTodo.value = '';
+});
+
+deleteFirstButton.addEventListener('click', function(){
+    todoList.splice(0, 1);
+    displayMessages();  
+    updateTasks();
+    localStorage.setItem('todoList', JSON.stringify(todoList));
+    
+});
+
+deleteLastButton.addEventListener('click', function(){
+    let ids = todoList.length - 1;
+    todoList.splice(ids, 1);
+    displayMessages();  
+    updateTasks();
+    localStorage.setItem('todoList', JSON.stringify(todoList));
+    
 });
 
 function updateTasks(){

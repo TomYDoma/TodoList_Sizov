@@ -112,5 +112,12 @@ body{
     font-size: 60%;    
 }
 
+.text_explanation{
+    text-decoration:none;
+    color: black;
+    font-family: fantasy;
+
+}
+
 
 
